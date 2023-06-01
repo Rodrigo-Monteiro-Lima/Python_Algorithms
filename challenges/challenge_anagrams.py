@@ -1,4 +1,4 @@
-from challenges.merge_sort import merge_sort
+from challenges.merge_sort import merge_sort_string
 
 
 def is_anagram(first_string, second_string):
@@ -10,8 +10,8 @@ def is_anagram(first_string, second_string):
     ):
         return (first_string, second_string, False)
 
-    first_string = "".join(merge_sort(first_string.lower()))
-    second_string = "".join(merge_sort(second_string.lower()))
+    first_string = merge_sort_string(first_string.lower())
+    second_string = merge_sort_string(second_string.lower())
 
     if len(first_string) != len(second_string):
         return (first_string, second_string, False)
