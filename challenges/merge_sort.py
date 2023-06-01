@@ -1,5 +1,5 @@
 # Código de merge sort dado na aula 2.3 do dia
-# 31/05/23 pelo Professor Eli e adaptado para ser genérico?
+# 31/05/23 pelo Professor Eli e adaptado para ser genérico
 
 
 def merge_sort(item):
