@@ -1,4 +1,33 @@
-from challenges.merge_sort import merge_sort_string
+def merge_sort_string(string: str) -> str:
+    if len(string) <= 1:
+        return string
+
+    mid = len(string) // 2
+    left, right = merge_sort_string(string[:mid]), merge_sort_string(
+        string[mid:]
+    )
+    return merge_string(left, right)
+
+
+def merge_string(left, right):
+    merged = ""
+    left_cursor, right_cursor = 0, 0
+
+    while left_cursor < len(left) and right_cursor < len(right):
+        if left[left_cursor] <= right[right_cursor]:
+            merged += left[left_cursor]
+            left_cursor += 1
+        else:
+            merged += right[right_cursor]
+            right_cursor += 1
+
+    for i in range(left_cursor, len(left)):
+        merged += left[i]
+
+    for i in range(right_cursor, len(right)):
+        merged += right[i]
+
+    return merged
 
 
 def is_anagram(first_string, second_string):
